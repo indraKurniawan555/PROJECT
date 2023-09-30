@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Katalog Barang</title>
+  <link rel="stylesheet" href="katalog.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <!-- <div class="navbar1"> -->
+<!-- <div class="text"> -->
+    <div class="navbar1">
+        <div class="nav1">
+            <ul>
+                <li><img src="logostore.jpeg" alt="" height="40px"></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Paket</a>
+                    <div class="dropdown-content">
+                    <a href="katalog.html">MLBB</a>
+                    <a href="katalogff.html">Free Fire</a>
+                    <a href="katalogpubg.html">PUBG</a>
+                </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+  <div class="header">
+    <h1>Produk</h1>
+  </div>
+  <div class="main">
+    <div class="main1">
+      <img src="foto/heroml.jpg" alt="" height="270px">
+      <h2>MOBILE LEGENDS: BANG-BANG</h2>
+      <p>Evolt Store telah bekerja sama dengan Moonton untuk menawarkan top up Mobile Legends dengan mudah, aman dan nyaman.
+
+      Top up ML Diamond, Twilight Pass and Weekly Pass hanya dalam hitungan detik! Cukup masukan User ID dan Zone ID MLBB Anda, pilih jumlah Diamond yang Anda inginkan, selesaikan pembayaran, dan Diamond akan secara langsung ditambahkan ke akun Mobile Legends Anda.
+    
+      Bayarlah menggunakan Codacash, GoPay, ShopeePay, Dana, OVO, LinkAja, Telkomsel, Indosat, Tri, XL, Bank Transfer, QRIS, Indomaret, Alfamart, Kredivo, Kartu Kredit, dan Doku Wallet.
+    
+      Harga sudah termasuk PPN. Informasi tambahan, untuk transaksi menggunakan Telkomsel akan dikenakan biaya tambahan pajak</p>
+    </div>
+    <div class="main2">
+      <div class="data">
+        <form action="addhistory.php" method="post"></form>
+        <h2 class="info">MASUKKAN INFORMASI</h2>
+        <input class="id" type="text" placeholder="Id">
+        <input class="idserver" type="text" placeholder="Server">
+        <br><p color='white';>Id Pemain dan Server diperlukan</p>
+      </div>
+      <div class="item">
+        <h2 class="subjudul">PILIH ITEM</h2>
+        <div class="catalog">
+          <div class="item0" onclick="selectItem(this, 'Item 1', 4000)">
+            <img src="foto/diamond.png" alt="Item 1">
+            <h4>14 Diamond</h4>
+            <p>Rp.4.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, 'Item 2', 8000)">
+            <img src="foto/diamond.png" alt="Item 2">
+            <h4>28 Diamond</h4>
+            <p>Rp.8.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, 'Item 3', 10000)">
+            <img src="foto/diamond.png" alt="Item 3">
+            <h4>42 Diamond</h4>
+            <p>Rp.10.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, 'Item 4', 13000)">
+            <img src="foto/diamond.png" alt="Item 4">
+            <h4>56 Diamond</h4>
+            <p>Rp.13.000</p>
+          </div>
+        </div>
+        <div class="catalog2">
+          <div class="item0" onclick="selectItem(this, 'Item 5', 16500)">
+            <img src="foto/diamond.png" alt="Item 5">
+            <h4>70 Diamond</h4>
+            <p>Rp.16.500</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, 'Item 6', 20000)">
+            <img src="foto/diamond.png" alt="Item 6">
+            <h4>86 Diamond</h4>
+            <p>Rp.20.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, 'Item 7', 23000)">
+            <img src="foto/diamond.png" alt="Item 7">
+            <h4>98 Diamond</h4>
+            <p>Rp.23.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, 'Item 8', 26000)">
+            <img src="foto/diamond.png" alt="Item 8">
+            <h4>112 Diamond</h4>
+            <p>Rp.26.000</p>
+          </div>
+        </div>
+      </div>
+      <div class="main3">
+        <h2 class="info">MASUKKAN EMAIL</h2>
+        <input class="email" type="email" placeholder="EMAIL">
+        <p>Item yang dipilih: <span id="selectedItem"></span></p>
+        <button class="button-check" id="checkoutButton" onclick="checkout()"><b>BELI SEKARANG</b></button>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer" id="foot">
+      <div class="footer1">
+        <h1 class="judul1">EvoltStore</h1><br><br>
+        <p><b>PT. Bang Messi</b><br>Jl. Raya Telang, Kamal<br>Bangkalan, Madura, Jawa Timur</p><br><br>
+        <p><b>Customer Services</b><br>0888-8888-8888<br>pinjamaja@gmail.com</p>
+      </div>
+      <div class="footer2">
+        <h2>Tentang EvoltStore?</h2>
+        <p>Kami adalah platform top up game terkemuka di Indonesia yang menyediakan layanan praktis dan aman bagi para pecinta game. Dengan pengalaman bertahun-tahun dalam industri ini, kami berkomitmen untuk memberikan pengalaman top up yang tanpa repot bagi pengguna kami.</p>
+        <p>Di EvoltStore, kami mengerti bahwa proses top up game dapat menjadi rumit dan memakan waktu. Oleh karena itu, kami hadir untuk memberikan solusi yang cepat, mudah, dan andal. Dengan menggunakan platform kami, Anda dapat dengan mudah membeli kredit game, voucher, atau item dalam game dengan beberapa langkah sederhana.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    var selectedItem = null;
+    var itemPrice = 0;
+
+    function selectItem(element, itemName, price) {
+      if (selectedItem !== null) {
+        selectedItem.classList.remove("selected");
+      }
+
+      selectedItem = element;
+      selectedItem.classList.add("selected");
+      itemPrice = price;
+
+      var selectedItemText = document.getElementById("selectedItem");
+      selectedItemText.innerText = itemName;
+
+      // Aktifkan tombol "Checkout"
+      var checkoutButton = document.getElementById("checkoutButton");
+      checkoutButton.disabled = false;
+    }
+
+    function checkout() {
+      if (selectedItem === null) {
+        alert("Pilih item terlebih dahulu!");
+        return;
+      }
+
+      var id = document.querySelector(".id").value;
+      var idserver = document.querySelector(".idserver").value;
+      var email = document.querySelector(".email").value;
+
+      if (id === "" || idserver === "" || email === "") {
+        alert("Isi informasi dengan benar!");
+        return;
+      }
+
+      var data = {
+        item: selectedItem.querySelector("h4").innerText,
+        price: itemPrice,
+        id: id,
+        idserver: idserver,
+        email: email
+      };
+
+      // Kirim data ke halaman pembayaran dengan method POST
+      var form = document.createElement("form");
+      form.method = "POST";
+      form.action = "pembayaran.php";
+
+      // Buat input field dan assign value
+      var input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "data";
+      input.value = JSON.stringify(data);
+
+      // Tambahkan input field ke form
+      form.appendChild(input);
+
+      // Submit form untuk melakukan pengalihan halaman
+      document.body.appendChild(form);
+      form.submit();
+    }
+  </script>
+</body>
+</html>
