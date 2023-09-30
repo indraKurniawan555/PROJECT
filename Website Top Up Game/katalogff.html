@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Katalog Barang</title>
+  <link rel="stylesheet" href="katalog.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <>
+  <div class="navigasi">
+    <img src="foto/logostore-removebg-preview.png" alt="" height="75px">
+      <ul>
+          <li><a href="Landingpageafter.html" >Home</a></li>
+          <li><a href="contact.php" >Contact Us </a></li>
+          <li><a href="sdank.html" >S & K</a></li>
+          <li><a href="#foot">About</a></li>
+      </ul>
+    </div>
+    <div></div>
+    
+  <div class="main">
+    <div class="main1">
+      <img src="foto/ffkatalog.jpeg" alt="" height="210px" style="border-radius: 20px;">
+      <h2>GARENA FREE FIRE</h2>
+      <p>Selamat datang di dunia aksi dan kegembiraan tak terbatas dengan Free Fire! Jika Anda ingin meningkatkan keterampilan, kekuatan, dan kesenangan dalam permainan, kami memiliki sesuatu yang istimewa untuk Anda - Top Up Free Fire!
+        Top Up Free Fire memberikan Anda akses ke berbagai penawaran menarik yang akan memperkaya pengalaman permainan Anda. Dengan melakukan top up, Anda akan mendapatkan sejumlah Diamond, mata uang dalam game, yang akan membuka pintu menuju berbagai kesempatan dan keuntungan baru.</p>
+    </div>
+    <div class="main2">
+      <div class="data">
+        <h2 class="info">MASUKKAN INFORMASI</h2>
+        <input class="id" type="text" placeholder="Id">
+        <br><p color='white';>Id Pemain diperlukan</p>
+      </div>
+      <div class="item">
+        <h2 class="subjudul">PILIH ITEM</h2>
+        <div class="catalog">
+          <div class="item0" onclick="selectItem(this, '5 Diamond', 1000)">
+            <img src="foto/epep.jpeg" alt="Item 1">
+            <h4>5 Diamond</h4>
+            <p>Rp.1.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '12 Diamond', 2000)">
+            <img src="foto/epep.jpeg" alt="Item 2">
+            <h4>12 Diamond</h4>
+            <p>Rp.2.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '30 Diamond', 7500)">
+            <img src="foto/epep.jpeg" alt="Item 3">
+            <h4>30 Diamond</h4>
+            <p>Rp.7.500</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '70 Diamond', 9000)">
+            <img src="foto/epep.jpeg" alt="Item 4">
+            <h4>70 Diamond</h4>
+            <p>Rp.9.000</p>
+          </div>
+        </div>
+        <div class="catalog2">
+          <div class="item0" onclick="selectItem(this, '100 Diamond', 15000)">
+            <img src="foto/epep.jpeg" alt="Item 5">
+            <h4>100 Diamond</h4>
+            <p>Rp.15.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '140 Diamond', 17000)">
+            <img src="foto/epep.jpeg" alt="Item 6">
+            <h4>140 Diamond</h4>
+            <p>Rp.17.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '355 Diamond', 45000)">
+            <img src="foto/epep.jpeg" alt="Item 7">
+            <h4>355 Diamond</h4>
+            <p>Rp.45.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '720 Diamond', 90000)">
+            <img src="foto/epep.jpeg" alt="Item 8">
+            <h4>720 Diamond</h4>
+            <p>Rp.90.000</p>
+          </div>
+        </div>
+      </div>
+      <div class="main3">
+        <h2 class="info">MASUKKAN EMAIL</h2>
+        <input class="email" type="email" placeholder="EMAIL">
+        
+        <p>Item yang dipilih: <span id="selectedItem"></span></p>
+        <p style="color:rgb(252, 251, 251);font-size: smaller;">*Saya telah membaca dan menyetujui <span><a href="sdank.html">syarat dan ketentuan</a><input type="checkbox" id="agree" required></p>
+        <button class="button-check" id="checkoutButton" onclick="checkout()"><b>BELI SEKARANG</b></button>
+      </div>
+      <form action="addhistory.php" method="post">
+        <input type="hidden" name="idserver" class="idserver" value="some-value">
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer" id="foot">
+      <div class="footer1">
+        <h1 class="judul1">EvoltStore</h1><br><br>
+        <p><b>PT. Bang Messi</b><br>Jl. Raya Telang, Kamal<br>Bangkalan, Madura, Jawa Timur</p><br><br>
+        <p><b>Customer Services</b><br>0888-8888-8888<br>pinjamaja@gmail.com</p>
+      </div>
+      <div class="footer2">
+        <h2>Tentang EvoltStore?</h2>
+        <p>Kami adalah platform top up game terkemuka di Indonesia yang menyediakan layanan praktis dan aman bagi para pecinta game. Dengan pengalaman bertahun-tahun dalam industri ini, kami berkomitmen untuk memberikan pengalaman top up yang tanpa repot bagi pengguna kami.</p>
+        <p>Di EvoltStore, kami mengerti bahwa proses top up game dapat menjadi rumit dan memakan waktu. Oleh karena itu, kami hadir untuk memberikan solusi yang cepat, mudah, dan andal. Dengan menggunakan platform kami, Anda dapat dengan mudah membeli kredit game, voucher, atau item dalam game dengan beberapa langkah sederhana.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    var selectedItem = null;
+    var itemPrice = 0;
+
+    function selectItem(element, itemName, price) {
+      if (selectedItem !== null) {
+        selectedItem.classList.remove("selected");
+      }
+
+      selectedItem = element;
+      selectedItem.classList.add("selected");
+      itemPrice = price;
+
+      var selectedItemText = document.getElementById("selectedItem");
+      selectedItemText.innerText = itemName;
+
+      var checkoutButton = document.getElementById("checkoutButton");
+      checkoutButton.disabled = false;
+    }
+
+    function checkout() {
+      if (selectedItem === null) {
+        alert("Pilih item terlebih dahulu!");
+        return;
+      }
+
+      var id = document.querySelector(".id").value;
+      var idserver = document.querySelector(".idserver").value;
+      var email = document.querySelector(".email").value;
+
+      if (id === "" || idserver === "" || email === "") {
+        alert("Isi informasi dengan benar!");
+        return;
+      }
+      var agreeCheckbox = document.getElementById("agree");
+
+      if (!agreeCheckbox.checked) {
+        alert("Centang kotak 'Saya telah membaca dan menyetujui syarat dan ketentuan' terlebih dahulu!");
+        return;
+      }
+      var data = {
+        item: selectedItem.querySelector("h4").innerText,
+        price: itemPrice,
+        id: id,
+        idserver: idserver,
+        email: email
+      };
+
+      var form = document.createElement("form");
+      form.method = "POST";
+      form.action = "pembayaran.php";
+
+      var input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "data";
+      input.value = JSON.stringify(data);
+
+      form.appendChild(input);
+
+      document.body.appendChild(form);
+      form.submit();
+    }
+  </script>
+</body>
+</html>

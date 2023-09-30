@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Katalog Barang</title>
+  <link rel="stylesheet" href="katalog.css">
+  <style>
+    
+  </style>
+</head>
+<>
+<body>
+  <div class="navigasi">
+    <img src="foto/logostore-removebg-preview.png" alt="" height="75px">
+    <ul>
+      <li><a href="Landingpageafter.html">Home</a></li>
+      <li><a href="contact.php">Contact Us</a></li>
+      <li><a href="sdank.html">S & K</a></li>
+      <li><a href="#foot">About</a></li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="main1">
+      <img src="foto/pubgkatalog.jpeg" alt="" height="270px" style="border-radius: 20px;">
+      <h2 style="text-align: left;">PLAYER UNKNOWN'S BATTLEGROUNDS MOBILE</h2>
+      <p>Selamat datang di dunia pertempuran paling intens dan tak terlupakan dengan PUBG! Jika Anda mencari cara untuk memperluas dominasi Anda, meningkatkan keahlian, dan tampil beda di medan perang, kami memiliki sesuatu yang istimewa untuk Anda - Top Up PUBG!
+        Top Up PUBG memberikan Anda kesempatan untuk menguasai pertempuran dengan lebih baik dan memperoleh keuntungan tak terbatas. Melalui top up, Anda akan menerima UC (Unknown Cash), mata uang dalam game yang dapat membuka pintu menuju peluang baru, peningkatan senjata, dan gaya bermain yang lebih menakjubkan.</p>
+    </div>
+    <div class="main2">
+      <div class="data">
+        <h2 class="info">MASUKKAN INFORMASI</h2>
+        <input class="id" type="text" placeholder="Id PUBGM">
+        <br><p color='white';>Id Pemain diperlukan</p>
+      </div>
+      <div class="item">
+        <h2 class="subjudul">PILIH ITEM</h2>
+        <div class="catalog">
+          <div class="item0" onclick="selectItem(this, '32 UC', 3900)">
+            <img src="foto/uc.jpeg" alt="Item 1">
+            <h4>32 UC</h4>
+            <p>Rp.3.900</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '52 UC', 9900)">
+            <img src="foto/uc.jpeg" alt="Item 2">
+            <h4>52 UC</h4>
+            <p>Rp.9.900</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '105 UC', 19500)">
+            <img src="foto/uc.jpeg" alt="Item 3">
+            <h4>105 UC</h4>
+            <p>Rp.19.500</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '131 UC', 24000)">
+            <img src="foto/uc.jpeg" alt="Item 4">
+            <h4>131 UC</h4>
+            <p>Rp.24.000</p>
+          </div>
+        </div>
+        <div class="catalog2">
+          <div class="item0" onclick="selectItem(this, '263 UC', 46500)">
+            <img src="foto/uc.jpeg" alt="Item 5">
+            <h4>263 UC</h4>
+            <p>Rp.46.500</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '530 UC', 92500)">
+            <img src="foto/uc.jpeg" alt="Item 6">
+            <h4>530 UC</h4>
+            <p>Rp.92.500</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '635 UC', 111000)">
+            <img src="foto/uc.jpeg" alt="Item 7">
+            <h4>635 UC</h4>
+            <p>Rp.111.000</p>
+          </div>
+          <div class="item0" onclick="selectItem(this, '825 UC', 139000)">
+            <img src="foto/uc.jpeg" alt="Item 8">
+            <h4>825 UC</h4>
+            <p>Rp.139.000</p>
+          </div>
+        </div>
+      </div>
+      <div class="main3">
+        <h2 class="info">MASUKKAN EMAIL</h2>
+        <input class="email" type="email" placeholder="EMAIL">
+        <p>Email akan mendapatkan status notifikasi pembelian</p>
+        <p>Item yang dipilih: <span id="selectedItem"></span></p>
+        <p style="color:rgb(252, 251, 251);font-size: smaller;">*Saya telah membaca dan menyetujui <span><a href="sdank.html">syarat dan ketentuan</a></span><input type="checkbox" id="agree" required></p>
+        <button class="button-check" id="checkoutButton" onclick="checkout()"><b>BELI SEKARANG</b></button>
+      </div>
+      <form action="addhistory.php" method="post">
+        <input type="hidden" name="idserver" class="idserver" value="some-value">
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer" id="foot">
+      <div class="footer1">
+        <h1 class="judul1">EvoltStore</h1><br><br>
+        <p><b>PT. Bang Messi</b><br>Jl. Raya Telang, Kamal<br>Bangkalan, Madura, Jawa Timur</p><br><br>
+        <p><b>Customer Services</b><br>0888-8888-8888<br>pinjamaja@gmail.com</p>
+      </div>
+      <div class="footer2">
+        <h2>Tentang EvoltStore?</h2>
+        <p>Kami adalah platform top up game terkemuka di Indonesia yang menyediakan layanan praktis dan aman bagi para pecinta game. Dengan pengalaman bertahun-tahun dalam industri ini, kami berkomitmen untuk memberikan pengalaman top up yang tanpa repot bagi pengguna kami.</p>
+        <p>Di EvoltStore, kami mengerti bahwa proses top up game dapat menjadi rumit dan memakan waktu. Oleh karena itu, kami hadir untuk memberikan solusi yang cepat, mudah, dan andal. Dengan menggunakan platform kami, Anda dapat dengan mudah membeli kredit game, voucher, atau item dalam game dengan beberapa langkah sederhana.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    var selectedItem = null;
+    var itemPrice = 0;
+
+    function selectItem(element, itemName, price) {
+      if (selectedItem !== null) {
+        selectedItem.classList.remove("selected");
+      }
+
+      selectedItem = element;
+      selectedItem.classList.add("selected");
+      itemPrice = price;
+
+      var selectedItemText = document.getElementById("selectedItem");
+      selectedItemText.innerText = itemName;
+
+      var checkoutButton = document.getElementById("checkoutButton");
+      checkoutButton.disabled = false;
+    }
+
+    function checkout() {
+      if (selectedItem === null) {
+        alert("Pilih item terlebih dahulu!");
+        return;
+      }
+
+      var id = document.querySelector(".id").value;
+      var idserver = document.querySelector(".idserver").value;
+      var email = document.querySelector(".email").value;
+
+      if (id === "" || idserver === "" || email === "") {
+        alert("Isi informasi dengan benar!");
+        return;
+      }
+
+      var data = {
+        item: selectedItem.querySelector("h4").innerText,
+        price: itemPrice,
+        id: id,
+        idserver: idserver,
+        email: email
+      };
+      var agreeCheckbox = document.getElementById("agree");
+
+      if (!agreeCheckbox.checked) {
+        alert("Centang kotak 'Saya telah membaca dan menyetujui syarat dan ketentuan' terlebih dahulu!");
+        return;
+      }
+      var form = document.createElement("form");
+      form.method = "POST";
+      form.action = "pembayaran.php";
+
+      var input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "data";
+      input.value = JSON.stringify(data);
+
+      form.appendChild(input);
+
+      document.body.appendChild(form);
+      form.submit();
+    }
+  </script>
+</body>
+</html>
